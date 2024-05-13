@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+//import { HelperServiceService } from 'src/app/services/helper.service.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,9 @@ export class LoginPage implements OnInit {
   usuario: string = "";
   contrasena: string = "";
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+             // private helper: HelperServiceService
+  ) { }
 
   ngOnInit() {
   }
@@ -19,14 +22,20 @@ export class LoginPage implements OnInit {
   async Login(){
 
     if(this.usuario == ""){
+     // await this.helper.mostrarAlerta("Debes ingresar un correo","Información");
+     // return;
       
     }
 
     if(this.contrasena == ""){
+      //await this.helper.mostrarAlerta("Debes ingresar una contraseña","Información");
+     // return;
     
     }
     
+    
     await this.router.navigateByUrl('menu');
+    
   }
 
   async registrateAqui(){
