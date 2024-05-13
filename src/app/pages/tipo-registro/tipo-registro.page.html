@@ -1,22 +1,31 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Roomies<ion-icon name="home-outline"></ion-icon></ion-title>
+    <ion-title>
+      <ion-icon (click)="back()" name="arrow-back-outline"></ion-icon>
+      Roomies
+      <ion-icon name="home-outline"></ion-icon>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">tipoRegistro</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <br>
-  <br>
-  <h1>Cuentanos que buscas</h1>
-  <br>
-  <ion-button>Habitación</ion-button>
   <br>
   <br>
   <br>
-  <ion-button>Roomie</ion-button>
+  <h1>Cuéntanos, ¿qué buscas?</h1>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <ion-button class="btn1" (click)="habitacion()" expand="block" size="large" fill="solid" shape="round">Habitación</ion-button>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <ion-button class="btn2" (click)="rommie()" expand="block" size="large" fill="solid" shape="round">Roomie</ion-button>
 </ion-content>

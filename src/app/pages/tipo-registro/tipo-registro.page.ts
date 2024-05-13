@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tipo-registro',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TipoRegistroPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+  
+  async habitacion(){
+    await this.router.navigateByUrl("arrendatario");
+  }
+
+  async rommie(){
+    await this.router.navigateByUrl("arrendador");
+  }
+
+  async back(){
+    await this.router.navigateByUrl("registro");
   }
 
 }

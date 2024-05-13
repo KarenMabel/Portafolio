@@ -32,6 +32,14 @@ const routes: Routes = [
     path: 'tipo-registro',
     loadChildren: () => import('./pages/tipo-registro/tipo-registro.module').then( m => m.TipoRegistroPageModule)
   },
+  {
+    path: 'arrendatario',
+    loadChildren: () => import('./pages/arrendatario/arrendatario.module').then( m => m.ArrendatarioPageModule)
+  },
+  {
+    path: 'arrendador',
+    loadChildren: () => import('./pages/arrendador/arrendador.module').then( m => m.ArrendadorPageModule)
+  },
 ];
 
 @NgModule({

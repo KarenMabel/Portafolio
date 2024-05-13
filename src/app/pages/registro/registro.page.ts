@@ -17,4 +17,8 @@ export class RegistroPage implements OnInit {
     await this.router.navigateByUrl('tipo-registro');
   }
 
+  async back(){
+    await this.router.navigateByUrl('login');
+  }
+
 }

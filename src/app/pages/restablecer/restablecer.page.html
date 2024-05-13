@@ -1,19 +1,25 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Roomies<ion-icon name="home-outline"></ion-icon></ion-title>
+    <ion-title>
+      <ion-icon (click)="back()" name="arrow-back-outline"></ion-icon>
+      Roomies
+      <ion-icon name="home-outline"></ion-icon>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
-      <ion-title size="large"></ion-title>
-      <br>
-      <h3>¿olvidate tu contraseña?</h3>
-      <br>
-      <h6>Ingresa tu correo electrónico, te enviaremos un código</h6>
-      <br>
-      <ion-input label="Correo Electrónico:" label-placement="floating" fill="outline" placeholder="Ingrese su correo electrónico"></ion-input>
-      <br>
-      <ion-button>Enviar</ion-button>
+  <br>
+  <br>
+  <h3>¿olvidate tu contraseña?</h3>
+  <br>
+  <br>
+  <h6>Ingresa tu correo electrónico, te enviaremos un código</h6>
+  <br>
+  <br>
+  <ion-input label="Correo Electrónico:" label-placement="floating" fill="outline" placeholder="Ingrese su correo electrónico"></ion-input>
+  <br>
+  <br>
+  <ion-button fill="solid" shape="round">Enviar</ion-button>
  
 </ion-content>
