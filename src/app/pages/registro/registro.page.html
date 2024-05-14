@@ -15,29 +15,29 @@
   <br>
  
     <ion-item>
-      <ion-input label="¿Cómo te llamas?" labelplacement="stacked"></ion-input>
+      <ion-input [(ngModel)]="nombre" label="¿Cómo te llamas?" labelplacement="stacked"></ion-input>
     </ion-item>
     <br>
     <ion-item>
-      <ion-input label="¿Cuáles son tus apellidos?" labelplacement="stacked"></ion-input>
+      <ion-input [(ngModel)]="apellidos" label="¿Cuáles son tus apellidos?" labelplacement="stacked"></ion-input>
     </ion-item>
     <br>
     <ion-item>
-      <ion-input label="Fecha de nacimiento:" labelplacement="stacked"></ion-input>
+      <ion-input [(ngModel)]="nacimiento" label="Fecha de nacimiento:" labelplacement="stacked"></ion-input>
     </ion-item>
     <br>
     <ion-item>
-      <ion-input label="Correo electrónico:" labelplacement="stacked"></ion-input>
+      <ion-input [(ngModel)]="correo" label="Correo electrónico:" labelplacement="stacked"></ion-input>
     </ion-item>
     <br>
     <ion-item>
-      <ion-input type="password" label="Escribe una Contraseña:" labelplacement="stacked"></ion-input>
+      <ion-input [(ngModel)]="contrasena1" type="password" label="Escribe una Contraseña:" labelplacement="stacked"></ion-input>
     </ion-item>
     <br>
     <ion-item>
-      <ion-input type="password" label="Confirma tu contraseña:" labelplacement="stacked"></ion-input>
+      <ion-input [(ngModel)]="contrasena2" type="password" label="Confirma tu contraseña:" labelplacement="stacked"></ion-input>
     </ion-item>
     <br>
-    <ion-button (click)="btnSiguiente()" fill="solid" shape="round">Siguiente</ion-button>
+    <ion-button (click)="registro()" fill="solid" shape="round">Siguiente</ion-button>
  
 </ion-content>

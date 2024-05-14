@@ -17,9 +17,9 @@
   <h6>Ingresa tu correo electrónico, te enviaremos un código</h6>
   <br>
   <br>
-  <ion-input label="Correo Electrónico:" label-placement="floating" fill="outline" placeholder="Ingrese su correo electrónico"></ion-input>
+  <ion-input [(ngModel)]="correo" label="Correo Electrónico:" label-placement="floating" fill="outline" placeholder="Ingrese su correo electrónico"></ion-input>
   <br>
   <br>
-  <ion-button fill="solid" shape="round">Enviar</ion-button>
+  <ion-button (click)="restablecer()" fill="solid" shape="round">Enviar</ion-button>
  
 </ion-content>

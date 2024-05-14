@@ -12,9 +12,9 @@
   
   <ion-img src="/assets/img/Roomies.jpg"></ion-img>
   <br>
-  <ion-input label="Correo Electrónico:" label-placement="floating" fill="outline" placeholder="Ingrese su correo electrónico"></ion-input>
+  <ion-input [(ngModel)]="usuario" label="Correo Electrónico:" label-placement="floating" fill="outline" placeholder="Ingrese su correo electrónico"></ion-input>
   <br>
-  <ion-input type="password" label="Contraseña:" label-placement="floating" fill="outline" placeholder="Ingrese su contraseña"></ion-input>
+  <ion-input [(ngModel)]="contrasena" type="password" label="Contraseña:" label-placement="floating" fill="outline" placeholder="Ingrese su contraseña"></ion-input>
   <br>
   <div class="btn">
   <ion-button (click)="Login()" fill="solid" shape="round">Ingresar</ion-button>
