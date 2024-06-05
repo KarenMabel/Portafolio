@@ -10,7 +10,66 @@
 
 <ion-content [fullscreen]="true">
   <br>
-  <h1>Construyendo tu perfil</h1>
+  <h1>¿Buscas Compañero para vivir?</h1>
+  <br>
+  <h1>Cuentanos sobre ti...</h1>
+  <br>
+  <br>
+  <ion-textarea
+  placeholder="Escribe una breve descripción de tí, queremos conocerte">
+  </ion-textarea>
+  <br>
+  <h3>¿Qué tipo de vivienda tienes?</h3>
+  <br>
+  <ion-checkbox labelPlacement="end" [(ngModel)]="casa" (ionChange)="checkBoxVivienda(1)">Casa</ion-checkbox><br>
+  <ion-checkbox  labelPlacement="end" [(ngModel)]="departamento" (ionChange)="checkBoxVivienda(2)">Departamento</ion-checkbox>
+  <br>
+  <h3>Cuentanos ¿Qué ofreces?</h3>
+  <br>
+  <ion-checkbox labelPlacement="end" [(ngModel)]="compartido" (ionChange)="checkBoxHabitacion(1)">Habitación con baño compartido</ion-checkbox><br>
+  <ion-checkbox labelPlacement="end" [(ngModel)]="privado" (ionChange)="checkBoxHabitacion(2)">Habitación con baño privado</ion-checkbox><br>
+  <br>
+  <h3>¿Cuánto cobras por una habitación?</h3>
+  <br>
+  <ion-checkbox labelPlacement="end" [(ngModel)]="uno" (ionChange)="checkBoxPrecio(1)">Menos de 100.000 </ion-checkbox><br>
+  <ion-checkbox labelPlacement="end" [(ngModel)]="dos" (ionChange)="checkBoxPrecio(2)">Entre 100.001 y 200.000</ion-checkbox><br>
+  <ion-checkbox labelPlacement="end" [(ngModel)]="tres" (ionChange)="checkBoxPrecio(3)">Entre 200.001 y 300.000</ion-checkbox><br>
+  <ion-checkbox labelPlacement="end" [(ngModel)]="cuatro" (ionChange)="checkBoxPrecio(4)">Entre 300.001 y 400.000</ion-checkbox><br>
+  <ion-checkbox labelPlacement="end" [(ngModel)]="cinco" (ionChange)="checkBoxPrecio(5)">Más de 400.001</ion-checkbox>
+  <br>
+  <h3>¿Tienes mascotas en tu vivienda?</h3>
+  <br>
+  <ion-checkbox labelPlacement="end" [(ngModel)]="perro" (ionChange)="checkBoxMascota(1)">Perro </ion-checkbox><br>
+  <ion-checkbox labelPlacement="end"[(ngModel)]="gato" (ionChange)="checkBoxMascota(2)">Gato</ion-checkbox><br>
+  <ion-checkbox labelPlacement="end"[(ngModel)]="pajaro" (ionChange)="checkBoxMascota(3)">Pájaros</ion-checkbox><br>
+  <ion-checkbox labelPlacement="end"[(ngModel)]="gallina" (ionChange)="checkBoxMascota(4)">Gallinas</ion-checkbox><br>
+  <ion-checkbox labelPlacement="end"[(ngModel)]="tortuga" (ionChange)="checkBoxMascota(5)">tortuga</ion-checkbox><br>
+  <ion-checkbox labelPlacement="end"[(ngModel)]="hamster" (ionChange)="checkBoxMascota(6)">Hamster</ion-checkbox><br>
+  <ion-checkbox labelPlacement="end"[(ngModel)]="conejo" (ionChange)="checkBoxMascota(7)">Conejo</ion-checkbox><br>
+  <ion-checkbox labelPlacement="end"[(ngModel)]="sinAnimal" (ionChange)="checkBoxMascota(8)">No tengo Mascotas</ion-checkbox>
+  <br>
+  <h3>¿Te gusta hacer ejercicios?</h3>
+  <br>
+  <ion-checkbox labelPlacement="end" [(ngModel)]="unoDeporte" (ionChange)="checkBoxDeporte(1)">Todos los días</ion-checkbox><br>
+  <ion-checkbox labelPlacement="end" [(ngModel)]="dosDeporte" (ionChange)="checkBoxDeporte(2)">Más de tres días a la semana</ion-checkbox><br>
+  <ion-checkbox labelPlacement="end" [(ngModel)]="tresDeporte" (ionChange)="checkBoxDeporte(3)">Menos de tres días a la semana</ion-checkbox><br>
+  <ion-checkbox labelPlacement="end" [(ngModel)]="cuatroDeporte" (ionChange)="checkBoxDeporte(4)">No hago ejercicios</ion-checkbox>
+  <br>
+  <h3>¿Cuáles son tus preferencias alimentarias?</h3>
+  <br>
+  <ion-checkbox labelPlacement="end" [(ngModel)]="vegetariano" (ionChange)="checkBoxComida(1)">Vegetariano</ion-checkbox><br>
+  <ion-checkbox labelPlacement="end" [(ngModel)]="vegano" (ionChange)="checkBoxComida(2)">Vegano</ion-checkbox><br>
+  <ion-checkbox labelPlacement="end" [(ngModel)]="carnivoro" (ionChange)="checkBoxComida(3)">Carnivoro</ion-checkbox><br>
+  <ion-checkbox labelPlacement="end" [(ngModel)]="pescetariano" (ionChange)="checkBoxComida(4)">pescetariano</ion-checkbox>
+  <br>
+  <h3>¿Cada cuánto tiempo fumas?</h3>
+  <br>
+  <ion-checkbox labelPlacement="end" [(ngModel)]="unoCigarro" (ionChange)="checkBoxCigarro(1)">Todos los días</ion-checkbox><br>
+  <ion-checkbox labelPlacement="end" [(ngModel)]="dosCigarro" (ionChange)="checkBoxCigarro(2)">Más de tres días a la semana</ion-checkbox><br>
+  <ion-checkbox labelPlacement="end" [(ngModel)]="tresCigarro" (ionChange)="checkBoxCigarro(3)">Menos de tres días a la semana</ion-checkbox><br>
+  <ion-checkbox labelPlacement="end" [(ngModel)]="cuatroCigarro" (ionChange)="checkBoxCigarro(4)">Solo en eventos sociales</ion-checkbox><br>
+  <ion-checkbox labelPlacement="end" [(ngModel)]="cincoCigarro" (ionChange)="checkBoxCigarro(5)">No fumo</ion-checkbox>
+  <br>
 
 
 </ion-content>
