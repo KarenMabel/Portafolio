@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HelperService } from 'src/app/services/helper.service';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
   selector: 'app-menu',
@@ -6,10 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.page.scss'],
 })
 export class MenuPage implements OnInit {
+  router: any;
 
-  constructor() { }
+  constructor(private helper:HelperService,
+              private auth: AngularFireAuth
+  ) { }
 
   ngOnInit() {
+  }
+
+  async cerrarSesion(){
+    var salir = await this.helper.Confirmar("¿Desea cerrar sesión?","Salir","Cancelar");
+    if(salir == true){
+      await this.auth.signOut();
+      await this.router.navigateByUrl("login");
+    }
+  
   }
 
 }

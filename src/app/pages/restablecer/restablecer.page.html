@@ -8,18 +8,26 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <br>
-  <br>
-  <h3>¿olvidate tu contraseña?</h3>
-  <br>
-  <br>
-  <h6>Ingresa tu correo electrónico, te enviaremos un código</h6>
-  <br>
-  <br>
-  <ion-input [(ngModel)]="correo" label="Correo Electrónico:" label-placement="floating" fill="outline" placeholder="Ingrese su correo electrónico"></ion-input>
-  <br>
-  <br>
-  <ion-button (click)="restablecer()" fill="solid" shape="round">Enviar</ion-button>
- 
+<ion-content  class="bg-gradient"[fullscreen]="true">
+  <ion-grid>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>¿Olvidaste tu contraseña?</ion-card-title>
+       
+      </ion-card-header>
+    
+      <ion-card-content>
+        <h2>Ingresa tu correo electrónico:</h2>
+        <br>
+        
+        <ion-input [(ngModel)]="correo" label="Correo Electrónico:" label-placement="floating" fill="outline" placeholder="Ingrese su correo electrónico"></ion-input>
+        <br>
+        <br>
+      </ion-card-content>
+    </ion-card>
+     <div class="boton">
+    <ion-button (click)="restablecer()" fill="solid" color="dark"expand="block">Enviar</ion-button>
+  </div>
+</ion-grid>
 </ion-content>
