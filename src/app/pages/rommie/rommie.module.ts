@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ArrendatarioPageRoutingModule } from './arrendatario-routing.module';
+import { RommiePageRoutingModule } from './rommie-routing.module';
 
-import { ArrendatarioPage } from './arrendatario.page';
+import { RommiePage } from './rommie.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ArrendatarioPageRoutingModule
+    RommiePageRoutingModule
   ],
-  declarations: [ArrendatarioPage]
+  declarations: [RommiePage]
 })
-export class ArrendatarioPageModule {}
+export class RommiePageModule {}

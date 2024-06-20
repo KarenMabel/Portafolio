@@ -11,7 +11,8 @@ ion-textarea{
 }
 
 .containercheck{
-  color:white
+  color:white;
+  font-family: estres;
 }
 .custom-textarea-item {
     --highlight-color-focused: #3880ff;
@@ -46,7 +47,16 @@ ion-textarea{
   }
   h1{
     color:black;
+    font-family: estres;
   }
-  ion-checkbox{
+  ion-radio-group{
     color:black;
   }
+  ion-card{
+    font-family: estres;
+  }
+  ion-button{
+    font-family: estres;
+  }
+
+

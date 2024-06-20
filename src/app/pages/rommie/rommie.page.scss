@@ -7,9 +7,11 @@
 // }
 ion-textarea{
     --background: white;
+    font-family: estres;
 }
 .containercheck{
-    color:white
+    color:white;
+    font-family: estres;
 }
 
 
@@ -28,7 +30,7 @@ ion-textarea{
     border-radius: 10px;
     border: 1px solid #ccc;
     background-color: #fff;
-    font-family: 'Arial', sans-serif;
+    font-family: estres;
     font-size: 16px;
   }
   
@@ -47,7 +49,17 @@ ion-textarea{
   }
   h1{
     color:black;
+    font-family: estres;
   }
-  ion-checkbox{
-    color:black;
+  
+  ion-radio-group{
+    color: black;
+    font-family: estres;
+  }
+  ion-card{
+    font-family: estres;
+
+  }
+  ion-button{
+    font-family: estres;
   }

@@ -1,0 +1,108 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <ion-icon  (click)="back()" name="arrow-back-outline"></ion-icon>
+      Roomies
+      <ion-icon name="home-outline"></ion-icon>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  class="bg-gradient" [fullscreen]="true">
+  <ion-grid>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Buscas arrendar una Habitación, depto o casa</ion-card-title>
+      </ion-card-header>
+  
+      <ion-card-content>
+        <h1>Cuentanos sobre ti...</h1>
+        <br>
+        <ion-item class="custom-textarea-item">
+          <ion-label position="floating">Tu mensaje</ion-label>
+          <ion-textarea placeholder="Escribe aquí..." class="custom-textarea" auto-grow="true"></ion-textarea>
+          <ion-icon name="chatbubble-outline" slot="start"></ion-icon>
+        </ion-item>
+        <div class="containercheck">
+          <h1>¿que tipo de vivienda buscas?</h1>
+          <ion-radio-group>
+            <ion-radio labelPlacement="end">Casa</ion-radio><br>
+            <ion-radio  labelPlacement="end">Departamento</ion-radio>
+          </ion-radio-group>
+          <br>
+          <h1>¿Cuánto pagarias por una habitación?</h1>
+          <br>
+          <ion-radio-group>
+            <ion-radio labelPlacement="end" >Menos de 100.000 </ion-radio><br>
+            <ion-radio labelPlacement="end" >Entre 100.001 y 200.000</ion-radio><br>
+            <ion-radio labelPlacement="end" >Entre 200.001 y 300.000</ion-radio><br>
+            <ion-radio labelPlacement="end" >Entre 300.001 y 400.000</ion-radio><br>
+            <ion-radio labelPlacement="end" >Más de 400.001</ion-radio>
+          </ion-radio-group>
+          <br>
+          <br>
+          <h1>¿Tienes mascotas?</h1>
+          <br>
+          <ion-radio-group>
+            <ion-radio labelPlacement="end">Perro </ion-radio><br>
+            <ion-radio labelPlacement="end">Gato</ion-radio><br>
+            <ion-radio labelPlacement="end">Pájaros</ion-radio><br>
+            <ion-radio labelPlacement="end">Gallinas</ion-radio><br>
+            <ion-radio labelPlacement="end">tortuga</ion-radio><br>
+            <ion-radio labelPlacement="end">Hamster</ion-radio><br>
+            <ion-radio labelPlacement="end">Conejo</ion-radio><br>
+            <ion-radio labelPlacement="end">No tengo Mascotas</ion-radio>
+          </ion-radio-group>
+          <br>
+          <br>
+          <h1>¿Te gusta hacer ejercicios?</h1>
+          <br>
+          <ion-radio-group>
+            <ion-radio labelPlacement="end">Todos los días</ion-radio><br>
+            <ion-radio labelPlacement="end">Más de tres días a la semana</ion-radio><br>
+            <ion-radio labelPlacement="end">Menos de tres días a la semana</ion-radio><br>
+            <ion-radio labelPlacement="end">No hago ejercicios</ion-radio>
+          </ion-radio-group>
+          <br>
+          <br>
+          <h1>¿Cuáles son tus preferencias alimentarias?</h1>
+          <br>
+          <ion-radio-group>
+            <ion-radio labelPlacement="end" >Vegetariano</ion-radio><br>
+            <ion-radio labelPlacement="end" >Vegano</ion-radio><br>
+            <ion-radio labelPlacement="end" >Carnivoro</ion-radio><br>
+            <ion-radio labelPlacement="end" >pescetariano</ion-radio>
+          </ion-radio-group>
+          <br>
+          <br>
+          <h1>¿Cada cuánto tiempo fumas?</h1>
+          <br>
+          <ion-radio-group>
+            <ion-radio labelPlacement="end" >Todos los días</ion-radio><br>
+            <ion-radio labelPlacement="end" >Más de tres días a la semana</ion-radio><br>
+            <ion-radio labelPlacement="end" >Menos de tres días a la semana</ion-radio><br>
+            <ion-radio labelPlacement="end" >Solo en eventos sociales</ion-radio><br>
+            <ion-radio labelPlacement="end" >No fumo</ion-radio>
+          </ion-radio-group>
+          <br>
+          <h1>¿Perteneces a la comunidad LGTB?</h1>
+          <ion-radio-group>
+            <ion-radio labelPlacement="end" >si</ion-radio><br>
+            <ion-radio  labelPlacement="end">no</ion-radio>
+          </ion-radio-group>
+          <br>
+          <h1>¿Cada cuánto tiempo consumes alcohol?</h1>
+          <br>
+          <ion-radio-group>
+            <ion-radio labelPlacement="end">Todos los días</ion-radio><br>
+            <ion-radio labelPlacement="end">Más de tres días a la semana</ion-radio><br>
+            <ion-radio labelPlacement="end">Menos de tres días a la semana</ion-radio><br>
+            <ion-radio labelPlacement="end">Solo en eventos sociales</ion-radio><br>
+            <ion-radio labelPlacement="end">No bebo</ion-radio>
+          </ion-radio-group>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  <ion-button (click)="registrar()" fill="solid" color="dark"expand="block">Registrar</ion-button>
+  </ion-grid>
+</ion-content>

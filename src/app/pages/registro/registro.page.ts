@@ -4,7 +4,9 @@ import { HelperService } from 'src/app/services/helper.service';
 import { Region } from 'src/app/models/region';
 import { Comuna } from 'src/app/models/comuna';
 import { LocationService } from 'src/app/services/location.service';
-
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { LoadingController } from '@ionic/angular';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-registro',
@@ -37,7 +39,10 @@ export class RegistroPage implements OnInit {
 
   constructor(private router: Router,
               private helper: HelperService,
-              private locationService:LocationService) 
+              private locationService:LocationService,
+              private auth: AngularFireAuth,
+              private loaderController:LoadingController,
+              private storage: StorageService) 
   {}
 
  
@@ -114,17 +119,67 @@ export class RegistroPage implements OnInit {
       return;
     }
 
-    
-    
+    var usuario =
+    [
+      {
+        nombre: this.nombre,
+        apellido: this.apellidos,
+        nacimiento: this.nacimiento,
+        edad: this.edad,
+        genero: this.selegenero,
+        comuna: this.seleComuna,
+        region: this.seleRegion,
+        correo: this.correo,
+        contrasena1: this.contrasena1,
+        contrasena2 : this.contrasena2
+      }
+    ]
+
+    try {
+      const req = await this.auth.createUserWithEmailAndPassword(this.correo, this.contrasena2);
+      this.storage.keepUser(usuario);
       await this.router.navigateByUrl('tipo-registro');
+      console.log(usuario);
+      
+      
+    
+    }catch(error:any){
+
+      if(error.code == 'auth/email-alredy-in-use'){
+        await this.loaderController.dismiss();
+        await this.helper.mostrarAlerta("Correo ya registrado","Error");
+        
+      }
+
+      if(error.code == 'auth/weak-password'){
+        await this.loaderController.dismiss();
+        await this.helper.mostrarAlerta("La contraseña no alcanza el mínimo de caracteres requeridos","Error"); 
+      }
+
+      if(error.code == 'auth/invalid-email'){
+        await this.loaderController.dismiss();
+        await this.helper.mostrarAlerta("El correo no es válido","Error");
+      }
+
+      if(error.code == 'auth/user-not-found'){
+        await this.loaderController.dismiss();
+        await this.helper.mostrarAlerta("Usuario no encontrado","Error");
+       
+      }
+
+      if(error.code == 'auth/wrong-password'){
+        await this.loaderController.dismiss();
+        await this.helper.mostrarAlerta("La contraseña ingresada no es válida","Error");
+      }
+      return;
     
 
+    }
     
+
   }
 
  
-  
-
   async back(){
     await this.router.navigateByUrl('login');
   }

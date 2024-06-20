@@ -32,14 +32,17 @@ const routes: Routes = [
     path: 'tipo-registro',
     loadChildren: () => import('./pages/tipo-registro/tipo-registro.module').then( m => m.TipoRegistroPageModule)
   },
+ 
   {
-    path: 'arrendatario',
-    loadChildren: () => import('./pages/arrendatario/arrendatario.module').then( m => m.ArrendatarioPageModule)
+    path: 'propietario',
+    loadChildren: () => import('./pages/propietario/propietario.module').then( m => m.PropietarioPageModule)
+  },  {
+    path: 'rommie',
+    loadChildren: () => import('./pages/rommie/rommie.module').then( m => m.RommiePageModule)
   },
-  {
-    path: 'arrendador',
-    loadChildren: () => import('./pages/arrendador/arrendador.module').then( m => m.ArrendadorPageModule)
-  },
+
+
+
   
  
 

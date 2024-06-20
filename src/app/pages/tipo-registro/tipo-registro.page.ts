@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { StorageService } from 'src/app/services/storage.service';
+
 
 @Component({
   selector: 'app-tipo-registro',
@@ -8,17 +11,28 @@ import { Router } from '@angular/router';
 })
 export class TipoRegistroPage implements OnInit {
 
-  constructor(private router: Router) { }
+  seleHabitacion: []=[];
+  seleRommie:[]=[];
+
+  constructor(private router: Router,
+              private auth: AngularFireAuth, 
+              private storage: StorageService
+  ) { }
 
   ngOnInit() {
   }
   
   async habitacion(){
-    await this.router.navigateByUrl("arrendatario");
+
+    await this.auth.currentUser;
+    await this.storage.keepUser(this.seleHabitacion)
+    await this.router.navigateByUrl("rommie");
   }
 
   async rommie(){
-    await this.router.navigateByUrl("arrendador");
+    await this.auth.currentUser;
+    await this.storage.keepUser(this.seleRommie)
+    await this.router.navigateByUrl("propietario");
   }
 
   async back(){

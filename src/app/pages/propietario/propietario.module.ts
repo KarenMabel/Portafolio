@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ArrendadorPageRoutingModule } from './arrendador-routing.module';
+import { PropietarioPageRoutingModule } from './propietario-routing.module';
 
-import { ArrendadorPage } from './arrendador.page';
+import { PropietarioPage } from './propietario.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ArrendadorPageRoutingModule
+    PropietarioPageRoutingModule
   ],
-  declarations: [ArrendadorPage]
+  declarations: [PropietarioPage]
 })
-export class ArrendadorPageModule {}
+export class PropietarioPageModule {}

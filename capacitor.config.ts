@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.roomies.app',
-  appName: 'roomiesAppGrupo4',
+  appId: 'com.Rommies.app',
+  appName: 'app',
   webDir: 'www'
 };
 
