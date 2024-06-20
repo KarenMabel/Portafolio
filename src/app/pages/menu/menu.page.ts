@@ -26,8 +26,9 @@ export class MenuPage implements OnInit {
     }
   
   }
-  async back(){
-    await this.router.navigateByUrl('login');
+  async perfil(){
+    await this.router.navigateByUrl('perfil');
   }
+
 
 }

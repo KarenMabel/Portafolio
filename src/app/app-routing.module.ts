@@ -40,6 +40,10 @@ const routes: Routes = [
     path: 'rommie',
     loadChildren: () => import('./pages/rommie/rommie.module').then( m => m.RommiePageModule)
   },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
 
 
 
