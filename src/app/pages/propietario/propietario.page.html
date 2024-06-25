@@ -21,7 +21,7 @@
         <br>
         <ion-item class="custom-textarea-item">
           <ion-label position="floating">Tu mensaje</ion-label>
-          <ion-textarea placeholder="Escribe aquí..." class="custom-textarea" auto-grow="true"></ion-textarea>
+          <ion-textarea [(ngModel)]="texto" placeholder="Escribe aquí..." class="custom-textarea" auto-grow="true"></ion-textarea>
           <ion-icon name="chatbubble-outline" slot="start"></ion-icon>
         </ion-item>
         <br>
@@ -29,49 +29,47 @@
           
           <h1>¿que tipo de vivienda ofreces?</h1>
           <br>
-          <ion-radio-group [(ngModel)]="vivienda">
+          <ion-radio-group [(ngModel)]="seleVivienda">
             <ion-radio labelPlacement="end" value="casa">Casa</ion-radio><br>
             <ion-radio  labelPlacement="end" value="depto">Departamento</ion-radio>
           </ion-radio-group>
           <br>
           <h1>¿Cuánto cobrarías por una habitación?</h1>
           <br>
-          <ion-radio-group [(ngModel)]="habitacion">
-            <ion-radio labelPlacement="end" value="uno">Menos de 100.000 </ion-radio><br>
-            <ion-radio labelPlacement="end" value="dos">Entre 100.001 y 200.000</ion-radio><br>
-            <ion-radio labelPlacement="end" value="tres">Entre 200.001 y 300.000</ion-radio><br>
-            <ion-radio labelPlacement="end" value="cuatro" >Entre 300.001 y 400.000</ion-radio><br>
-            <ion-radio labelPlacement="end" value="cinco">Más de 400.001</ion-radio>
+          <ion-radio-group [(ngModel)]="selePago">
+            <ion-radio labelPlacement="end" value="menos100">Menos de 100.000 </ion-radio><br>
+            <ion-radio labelPlacement="end" value="entre100200">Entre 100.001 y 200.000</ion-radio><br>
+            <ion-radio labelPlacement="end" value="entre200300">Entre 200.001 y 300.000</ion-radio><br>
+            <ion-radio labelPlacement="end" value="entre300400" >Entre 300.001 y 400.000</ion-radio><br>
+            <ion-radio labelPlacement="end" value="mas400">Más de 400.001</ion-radio>
           </ion-radio-group>
           <br>
           <br>
           <h1>¿Tienes mascotas?</h1>
           <br>
-          <ion-radio-group [(ngModel)]="mascotas">
+          <ion-radio-group [(ngModel)]="seleMascotas">
             <ion-radio labelPlacement="end" value="perro">Perro </ion-radio><br>
             <ion-radio labelPlacement="end" value="gato">Gato</ion-radio><br>
-            <ion-radio labelPlacement="end" value="pajaro">Pájaros</ion-radio><br>
-            <ion-radio labelPlacement="end" value="gallina">Gallinas</ion-radio><br>
-            <ion-radio labelPlacement="end" value="tortuga">tortuga</ion-radio><br>
-            <ion-radio labelPlacement="end" value="hamster">Hamster</ion-radio><br>
+            <ion-radio labelPlacement="end" value="aves">Aves</ion-radio><br>
             <ion-radio labelPlacement="end" value="conejo">Conejo</ion-radio><br>
+            <ion-radio labelPlacement="end" value="otraMascota">Otro</ion-radio><br>
             <ion-radio labelPlacement="end" value="sinMascota">No tengo Mascotas</ion-radio>
           </ion-radio-group>
           <br>
           <br>
           <h1>¿Te gusta hacer ejercicios?</h1>
           <br>
-          <ion-radio-group [(ngModel)]="ejercicios">
-            <ion-radio labelPlacement="end" value="ejerUno">Todos los días</ion-radio><br>
-            <ion-radio labelPlacement="end" value="ejerDos">Más de tres días a la semana</ion-radio><br>
-            <ion-radio labelPlacement="end" value="ejerTres">Menos de tres días a la semana</ion-radio><br>
-            <ion-radio labelPlacement="end" Value="ejerCuatro">No hago ejercicios</ion-radio>
+          <ion-radio-group [(ngModel)]="seleEjercicios">
+            <ion-radio labelPlacement="end" value="siempre">Todos los días</ion-radio><br>
+            <ion-radio labelPlacement="end" value="aveces">Más de tres días a la semana</ion-radio><br>
+            <ion-radio labelPlacement="end" value="casiNunca">Menos de tres días a la semana</ion-radio><br>
+            <ion-radio labelPlacement="end" Value="nunca">No hago ejercicios</ion-radio>
           </ion-radio-group>
           <br>
           <br>
           <h1>¿Cuáles son tus preferencias alimentarias?</h1>
           <br>
-          <ion-radio-group [(ngModel)]="alimento">
+          <ion-radio-group [(ngModel)]="seleAlimentacion">
             <ion-radio labelPlacement="end" value="vegetariano">Vegetariano</ion-radio><br>
             <ion-radio labelPlacement="end" value="vegano">Vegano</ion-radio><br>
             <ion-radio labelPlacement="end" value="carnivoro">Carnivoro</ion-radio><br>
@@ -81,28 +79,28 @@
           <br>
           <h1>¿Cada cuánto tiempo fumas?</h1>
           <br>
-          <ion-radio-group [(ngModel)]="fumar">
-            <ion-radio labelPlacement="end" value="fumaUno">Todos los días</ion-radio><br>
-            <ion-radio labelPlacement="end" value="fumaDos">Más de tres días a la semana</ion-radio><br>
-            <ion-radio labelPlacement="end" value="fumaTres">Menos de tres días a la semana</ion-radio><br>
-            <ion-radio labelPlacement="end" value="fumaCuatro">Solo en eventos sociales</ion-radio><br>
-            <ion-radio labelPlacement="end" value="fumaCinnco">No fumo</ion-radio>
+          <ion-radio-group [(ngModel)]="seleCigarro">
+            <ion-radio labelPlacement="end" value="siempre">Todos los días</ion-radio><br>
+            <ion-radio labelPlacement="end" value="aveces">Más de tres días a la semana</ion-radio><br>
+            <ion-radio labelPlacement="end" value="casiNunca">Menos de tres días a la semana</ion-radio><br>
+            <ion-radio labelPlacement="end" value="conAmigos">Solo en eventos sociales</ion-radio><br>
+            <ion-radio labelPlacement="end" value="nunca">No fumo</ion-radio>
           </ion-radio-group>
           <br>
           <h1>¿Perteneces a la comunidad LGTB?</h1>
-          <ion-radio-group [(ngModel)]="lgbt">
+          <ion-radio-group [(ngModel)]="seleComunidad">
             <ion-radio labelPlacement="end" value="si" >si</ion-radio><br>
             <ion-radio  labelPlacement="end" value="no">no</ion-radio>
           </ion-radio-group>
           <br>
           <h1>¿Cada cuánto tiempo consumes alcohol?</h1>
           <br>
-          <ion-radio-group [(ngModel)]="alcohol">
-            <ion-radio labelPlacement="end" value="alcUno">Todos los días</ion-radio><br>
-            <ion-radio labelPlacement="end" value="alcDos">Más de tres días a la semana</ion-radio><br>
-            <ion-radio labelPlacement="end" value="alcTres">Menos de tres días a la semana</ion-radio><br>
-            <ion-radio labelPlacement="end" value="alcCuatro">Solo en eventos sociales</ion-radio><br>
-            <ion-radio labelPlacement="end" value="alcCinco">No bebo</ion-radio>
+          <ion-radio-group [(ngModel)]="seleAlcohol">
+            <ion-radio labelPlacement="end" value="Siempre">Todos los días</ion-radio><br>
+            <ion-radio labelPlacement="end" value="aveces">Más de tres días a la semana</ion-radio><br>
+            <ion-radio labelPlacement="end" value="casiNunca">Menos de tres días a la semana</ion-radio><br>
+            <ion-radio labelPlacement="end" value="conAmigos">Solo en eventos sociales</ion-radio><br>
+            <ion-radio labelPlacement="end" value="nunca">No bebo</ion-radio>
           </ion-radio-group>
         </div>
       </ion-card-content>

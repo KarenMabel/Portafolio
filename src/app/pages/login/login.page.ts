@@ -17,7 +17,7 @@ export class LoginPage implements OnInit {
   constructor(private router: Router,
               private helper: HelperService,
               private auth: AngularFireAuth,
-              private loadingController: LoadingController
+              private loadercontroller: LoadingController
   ) { }
 
   ngOnInit() {
@@ -49,35 +49,20 @@ export class LoginPage implements OnInit {
       await this.router.navigateByUrl('menu');
       await cargando.dismiss();
     }catch(error:any) {
-      if(error.code == 'auth/email-alredy-in-use'){
-        
-        await this.helper.mostrarAlerta("Correo ya registrado","Error");
-        //await cargando.dismiss();
-      }
 
-      if(error.code == 'auth/weak-password'){
-        
-        await this.helper.mostrarAlerta("La contraseña no alcanza el mínimo de caracteres requeridos","Error"); 
-        await cargando.dismiss();
-      }
-
+    
       if(error.code == 'auth/invalid-email'){
-       
+        await cargando.dismiss();
         await this.helper.mostrarAlerta("El correo no es válido","Error");
-        await cargando.dismiss();
-      }
-
-      if(error.code == 'auth/user-not-found'){
         
-        await this.helper.mostrarAlerta("Usuario no encontrado","Error");
-        await cargando.dismiss();
       }
 
       if(error.code == 'auth/wrong-password'){
-        
+        //await cargando.dismiss();
         await this.helper.mostrarAlerta("La contraseña ingresada no es válida","Error");
-        await cargando.dismiss();
+        
       }
+      await cargando.dismiss();
       return;
     }
   }

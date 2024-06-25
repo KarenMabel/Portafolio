@@ -7,6 +7,8 @@ import { LocationService } from 'src/app/services/location.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { LoadingController } from '@ionic/angular';
 import { StorageService } from 'src/app/services/storage.service';
+import { DatabaseService } from 'src/app/services/database.service';
+
 
 @Component({
   selector: 'app-registro',
@@ -19,7 +21,7 @@ export class RegistroPage implements OnInit {
 
   nombre: string ="";
   apellidos: string ="";
-  nacimiento: string ="";
+  nacimiento: string="";
   selegenero: boolean = false;
   femenino:boolean = false;
   masculino:boolean = false;;
@@ -32,9 +34,13 @@ export class RegistroPage implements OnInit {
 
   regiones:Region [] = [];
   comunas:Comuna [] = [];
-  seleComuna:string ="";
+  seleComuna:number=0;
   seleRegion:number=0;
   disabledComuna:boolean = true;
+
+  
+
+  
 
 
   constructor(private router: Router,
@@ -42,7 +48,8 @@ export class RegistroPage implements OnInit {
               private locationService:LocationService,
               private auth: AngularFireAuth,
               private loaderController:LoadingController,
-              private storage: StorageService) 
+              private storage: StorageService,
+              private database: DatabaseService ) 
   {}
 
  
@@ -117,7 +124,8 @@ export class RegistroPage implements OnInit {
     if(this.contrasena1 !== this.contrasena2) {
       await this.helper.mostrarAlerta("Las contraseñas no coinciden.", "Información");
       return;
-    }
+    } 
+  
 
     var usuario =
     [
@@ -138,6 +146,7 @@ export class RegistroPage implements OnInit {
     try {
       const req = await this.auth.createUserWithEmailAndPassword(this.correo, this.contrasena2);
       this.storage.keepUser(usuario);
+      this.database.agregarUsuario(this.nombre,this.apellidos,this.nacimiento,this.edad,this.selegenero,this.seleComuna,this.seleRegion,this.correo);
       await this.router.navigateByUrl('tipo-registro');
       console.log(usuario);
       
@@ -176,8 +185,16 @@ export class RegistroPage implements OnInit {
 
     }
     
+   
 
-  }
+    
+   
+    }
+
+   
+
+    
+  
 
  
   async back(){
@@ -190,4 +207,5 @@ export class RegistroPage implements OnInit {
 
  
 }
+
 

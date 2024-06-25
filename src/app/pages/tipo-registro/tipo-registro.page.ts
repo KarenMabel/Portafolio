@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { StorageService } from 'src/app/services/storage.service';
+import { DatabaseService } from 'src/app/services/database.service';
 
 
 @Component({
@@ -11,27 +12,29 @@ import { StorageService } from 'src/app/services/storage.service';
 })
 export class TipoRegistroPage implements OnInit {
 
-  seleHabitacion: []=[];
-  seleRommie:[]=[];
+  seleHabitacion:any;
+  seleRommie:any;
 
   constructor(private router: Router,
-              private auth: AngularFireAuth, 
+              private database: DatabaseService, 
               private storage: StorageService
   ) { }
 
   ngOnInit() {
   }
+
+  tipo_registro(){
+    if (this.seleHabitacion == this.seleHabitacion){
+      
+    }
+  }
   
   async habitacion(){
-
-    await this.auth.currentUser;
-    await this.storage.keepUser(this.seleHabitacion)
+    await this.storage.keepUser(this.seleHabitacion);
     await this.router.navigateByUrl("rommie");
   }
 
   async rommie(){
-    await this.auth.currentUser;
-    await this.storage.keepUser(this.seleRommie)
     await this.router.navigateByUrl("propietario");
   }
 

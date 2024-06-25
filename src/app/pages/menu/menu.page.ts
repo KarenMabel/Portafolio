@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HelperService } from 'src/app/services/helper.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
+import { DatabaseService } from 'src/app/services/database.service';
 
 @Component({
   selector: 'app-menu',
@@ -11,9 +12,13 @@ import { Router } from '@angular/router';
 export class MenuPage implements OnInit {
 
 
+
+
   constructor(private helper:HelperService,
               private auth: AngularFireAuth,
-              private router: Router ) { }
+              private router: Router,
+              public dataBase:DatabaseService
+            ) { }
 
   ngOnInit() {
   }
@@ -29,6 +34,9 @@ export class MenuPage implements OnInit {
   async perfil(){
     await this.router.navigateByUrl('perfil');
   }
+
+
+
 
 
 }
